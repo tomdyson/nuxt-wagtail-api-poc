@@ -4,7 +4,7 @@
     <div v-else>
       <h1 class="text-4xl font-black pb-4 leading-tight">{{ item.title }}</h1>
       <p>
-        <n-link to="/" class="underline">Home</n-link>
+        <n-link to="/" class="underline hover:bg-orange-200 transition duration-500">Home</n-link>
       </p>
       <img
         v-if="item.hero_thumbnail"
@@ -31,7 +31,11 @@
 export default {
   data() {
     return {
-      item: {}
+      item: {
+        hero_thumbnail: {
+          url: ""
+        }
+      }
     };
   },
   head() {
@@ -42,6 +46,11 @@ export default {
           hid: "description",
           name: "description",
           content: this.item.introduction
+        },
+        {
+          hid: "og:image",
+          name: "og:image",
+          content: this.item.hero_thumbnail.url
         }
       ]
     };

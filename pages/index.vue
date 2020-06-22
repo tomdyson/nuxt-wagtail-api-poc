@@ -5,7 +5,10 @@
     <p v-else-if="$fetchState.error">Error while fetching posts: {{ $fetchState.error.message }}</p>
     <ul v-else>
       <li v-for="post of posts.items" :key="post.id" class="pb-4">
-        <n-link :to="`/posts/${post.id}`" class="text-2xl font-bold leading-tight">{{ post.title }}</n-link>
+        <n-link
+          :to="`/posts/${post.id}`"
+          class="text-2xl font-bold text-gray-800 leading-tight underline hover:bg-orange-200 transition duration-300"
+        >{{ post.title }}</n-link>
         <p class="pt-1">{{ post.introduction }}</p>
         <p class="pt-1 pb-4 text-gray-600">{{ post.publication_date|datify }}</p>
       </li>
