@@ -1,10 +1,10 @@
 <template>
-  <div class="container pl-16 pt-12 max-w-2xl">
+  <div class="container sm:px-16 px-6 pt-8 max-w-3xl">
     <div v-if="$fetchState.pending">Fetching post #{{$route.params.id}}...</div>
     <div v-else>
       <h1 class="text-4xl font-black pb-4 leading-tight">{{ item.title }}</h1>
       <p>
-        <n-link to="/" class="underline hover:bg-orange-200 transition duration-500">Home</n-link>
+        <n-link to="/" class="text-gray-700 leading-tight hover:underline">Home</n-link>
       </p>
       <img
         v-if="item.hero_thumbnail"
@@ -64,7 +64,10 @@ export default {
 </script>
 
 <style>
+.athelas {
+  font-family: "Source Serif Pro", athelas, georgia, serif;
+}
 #streamfield p {
-  @apply mb-4;
+  @apply mb-4 athelas text-lg;
 }
 </style>
